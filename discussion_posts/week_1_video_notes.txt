@@ -1,0 +1,42 @@
+Video Outline
+---
+
+# Background
+- Lived in Chicago for the past eight years and in Chicago's Bucktown neighborhood for the past four. I'm very close to
+Wicker Park and live with my two cats and wife. I got married in April 2023
+- I've worked as a software engineer since graduating from Michigan State in 2016 with a degree in computer science
+- I'm currently working at Galter Health Sciences Library on Northwestern's Chicago campus and have been here for almost
+four years now
+- My work experience is mostly in Ruby, but I've also worked with Python, Javascript, and used C/C++ for most of
+my undergrad
+- I've dabbled in many programming languages for small side projects, but not enough that I would feel confident working
+in them professionally
+
+# My experiences with Go
+- My previous experience with Go is not particularly deep. I went through the Go Tutorial at one point years in
+undergrad, and then built a small app that was hardly a step above "Hello World", but besides that my only exposure has
+been using it for interview coding challenges. The most interesting of these was building Conway's Game of Life in Go
+- One of the things that I found interesting about Go early on was that Ken Thompson had helped to develop it. As most
+programmers know, he was one of the important developers at Bell Labs in the 60s and came up with the B programming
+language that would be eclipsed by C. Thompson had also worked on the operating system Plan 9, which, at least from my
+perspective, was kind of an experimental operating system. Because of this I was very interested in Go, but I really
+didnt have the experience to make any use of it then and ended up focusing on what was going to get me hired at the time
+
+# What I've Learned About Go
+- It seems that Go has grown a lot from when I first heard about it in undergrad and it was interesting to see some of
+the projects it has been used in and how it has replaced a lot of legacy code written in older compiled languages
+- I had a hard time finding an article that I stood out to me at first, but I was drawn to PayPal, Cloudflare, and
+Ebay's uses cases because of how often I use these services. Having at least some understanding of the types of
+challenges that these businesses face helped to highlight how Go was useful
+- In particular I enjoyed reading about the load balanced router "Fabio" which is used by Ebay. The projects I work on
+rely on tools like this to work, but rarely do I get the chance to see how they work. I was surprised to see that the
+load balancing algorithm was a monte carlo aglorithm. Essentially it randomizes traffic to different services, but uses
+Hashicorp's Consul program to determine if a node is healthy enough to receive any traffic.
+
+- Consistently the top selling points of Go are simplicity of the language, fast compilation and run times, and built-in
+concurrency. These points came up either individually or as a group in every article that I read. Admittedly, I was most
+skeptical on people referring to go as a simple language, but when you compare it to something like C++ it has a lot
+smaller of a language definition and seemingly less complicated tools to use in the build process.
+- One of the classes I struggled with the most in undergrad was parallel processing, so I'm really interested to see how
+concurrency is handled in Go. I'm guessing there will be a bit of a learning curve, but I have a feeling it will be
+easier than some of the other libraries I've used in the past such as CUDA

@@ -1,0 +1,25 @@
+PayPal Taps Go to Modernize and Scale
+https://go.dev/solutions/paypal
+---
+
+I found the article on Paypal's success scaling up and simplifying their codebase with Go interesting. When I think of
+scaling up my mind goes to handling larger request loads, but two major reasons Go has become popular at Paypal is that
+the code remains simple as the project grows and the build times are relatively fast compared to many compiled
+languages. The story of rewriting their internal NoSQL database from C++ to Go did an excellent job of highlighting the
+advantages of developing in Go.
+
+My programming career has been almost entirely in Ruby and Python with some C/C++ experience while I was in school, so
+Go is entirely new to me. Scalability issues on the other hand are not new to me and I think there are several apps at
+my current job that could benefit from migrating to Go.
+
+Graceful Upgrades in Go
+https://blog.cloudflare.com/graceful-upgrades-in-go/
+---
+
+I also enjoyed the article on how Cloudfare performed graceful upgrades, which are upgrades to code or configuration
+that do not disrupt connections, for Go projects. I have used Cloudflare products in the past so  it was interesting to
+learn more about the technology it is built with and how it solved this challanging problem.
+
+The company I decided to investigate was Ebay because I often use the site I was interested in seeing how they used Go.
+The primary tool is an HTTP/TCP router called "Fabio". It's intended use is to route traffic to microservices that are
+registered to HashiCorp's tool "Consul". Go was used for this project for it's speed and relative simplicity.

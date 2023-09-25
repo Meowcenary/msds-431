@@ -1,0 +1,76 @@
+1. Discuss the pros and cons of several different testing frameworks introduced
+in the article https://bmuschko.com/blog/go-testing-frameworks/.
+
+In addition to the testing package provided by the Go standard libary, the
+article introduced the Go testing tools Testify, gocheck, gopwt, go-testdeep,
+Ginkgo, Gomega, Goblin, and GoConvey.
+
+It seems that the primary benefit of using the Go package testing is that it is
+included with the language so there is no need to add a dependency for testing.
+Also, because it is part of the standard library it benefits from being
+backwards compatible and receiving routine updates. In my opinion the syntax
+feels a bit verbose and clunky compared to the other testing frameworks listed,
+but it seems that a lot of people in the Go community feel that it's the best
+choice.
+
+The library Testify integrates with the standard testing package and adds
+packages for mocking, improvements to assertions, and for organizing tests into
+suites. It feels like a natural extension to the standard testing library and
+seems to strike a middle ground between the spartan standard testing package and
+the feature heavy Ginkgo. Gocheck ...
+
+Gopwt
+
+Go-testdeep
+
+The testing library Ginkgo and it's preferred matcher library Gomega offer many
+features to write expressive tests and reduce boilerlate code, but it is
+controversial within the Go community because it adds the complexity of a
+domain specific language and the overhead of including the library into the test
+suite. I really like the Ginkgo syntax since it reminds me of the testing
+framework RSpec that I use for Ruby projects which is easier for me to
+understand than the other frameworks listed. While I do like the syntax, the
+added overhead outweighs it's benefit in my opinion. Without having much
+experience working in Go it's hard to see the benefits that Ginkgo brings to the
+table.
+
+- https://go.dev/doc/go1compat#introduction
+- https://www.youtube.com/watch?v=PAAkCSZUG1c&t=568s
+- https://go-proverbs.github.io/
+- https://pkg.go.dev/testing#pkg-overview
+- https://github.com/stretchr/testify
+- https://onsi.github.io/ginkgo/
+- https://github.com/onsi/gomega
+
+2. Share any experience you have had using testing tools on software projects
+you have worked on.
+
+Most of my experience has been with the Ruby testing framework RSpec combined
+with the acceptance test framework Capybara. Capybara provides functionality for
+simulating a user interacting with a web application by mouse and keyboard. As
+useful as Capybara is for thorough testing, it's significantly slower than
+simpler tests that do not use Capybara. Because of this prioritizing efficiency
+is particularly important.  In order to keep testing times short at my current
+workplace we try to limit the tests we write that use Capybara to the most
+important workflows that are difficult to test using simpler methods. We also
+use the Ruby library parallel_tests https://github.com/grosser/parallel_tests
+that provides functionality for assigning test groups to separate processes.
+I have significantly less testing experience in Python, but have contributed to
+projects that use the testing framework Pytest. Pytest and RSpec have similar
+interfaces so switching between the two, while a little annoying, isn't too
+difficult.
+
+I have a bit of experience using continuous integration (CI) tools such as
+Jenkins, Travis CI, and Github Actions. Because the team I work on is very
+small, we only use a simple Github Actions CI pipeline that runs a linter and
+the test suite for the app on each pull request. I've been very impressed with
+Github Actions and have used it in testing workflows for several apps since
+learning how to configure it about a year ago. Previously we used the Ruby
+software Jenkins for CI, mostly because it was free, but decided to make the
+move to Github Actions after having some difficulties with our self hosted
+server. Because of our small team size and simple pipeline we are able to use
+Github Actions without any additonal costs which was the primary advantage of
+using Jenkins. Though Jenkins was not too complicated, Github Actions required
+no server administration which led to less configuration existing outside of
+version control. It also offered a large list of default configurations that
+could easily be modified for each project.

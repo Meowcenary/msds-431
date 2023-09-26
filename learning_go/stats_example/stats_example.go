@@ -20,8 +20,7 @@ func main() {
         {7, 4.82},
         {5, 5.68},
     }
-    r, _ := stats.LinearRegression(anscombe_1)
-    fmt.Println(r)
+    Printlinearregression(anscombe_1, "Anscombe 1 linear regression")
 
     anscombe_2 := []stats.Coordinate{
         {10, 9.14},
@@ -36,8 +35,7 @@ func main() {
         {7, 7.26},
         {5, 4.74},
     }
-    r, _ = stats.LinearRegression(anscombe_2)
-    fmt.Println(r)
+    Printlinearregression(anscombe_2, "Anscombe 2 linear regression")
 
     anscombe_3 := []stats.Coordinate{
         {10, 7.46},
@@ -52,9 +50,7 @@ func main() {
         {7, 6.42},
         {5, 5.73},
     }
-    r, _ = stats.LinearRegression(anscombe_3)
-    fmt.Println(r)
-
+    Printlinearregression(anscombe_3, "Anscombe 3 linear regression")
 
     anscombe_4 := []stats.Coordinate{
         {8, 6.58},
@@ -69,6 +65,16 @@ func main() {
         {8, 7.91},
         {8, 6.89},
     }
-    r, _ = stats.LinearRegression(anscombe_4)
-    fmt.Println(r)
+    Printlinearregression(anscombe_4, "Anscombe 4 linear regression")
+}
+
+func Printlinearregression(data stats.Series, label string) {
+    fmt.Println(label)
+    r, _ := stats.LinearRegression(data)
+
+    for i := 0; i < len(r); i++ {
+        fmt.Println(r[i])
+    }
+
+    fmt.Println("---\n")
 }

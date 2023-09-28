@@ -13,3 +13,7 @@ clean:
 	rm ./bin/${BINARY_NAME}-darwin
 	rm ./bin/${BINARY_NAME}-linux
 	rm ./bin/${BINARY_NAME}-windows
+
+vet:
+	go vet
+

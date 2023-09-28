@@ -6,6 +6,13 @@ import (
     "github.com/montanaflynn/stats"
 )
 
+/*
+Testing notes
+---
+Unit test that each of the functions are returning correct data
+*/
+
+// TODO list out the intercepts
 func main() {
     anscombe_1 := []stats.Coordinate{
         {10, 8.04},
@@ -20,7 +27,8 @@ func main() {
         {7, 4.82},
         {5, 5.68},
     }
-    Printlinearregression(anscombe_1, "Anscombe 1 linear regression")
+    fmt.Println("Anscombe 1 linear regression")
+    Printlinearregression(anscombe_1)
 
     anscombe_2 := []stats.Coordinate{
         {10, 9.14},
@@ -35,7 +43,10 @@ func main() {
         {7, 7.26},
         {5, 4.74},
     }
-    Printlinearregression(anscombe_2, "Anscombe 2 linear regression")
+    fmt.Println("Anscombe 2 linear regression")
+    Printlinearregression(anscombe_2)
+    fmt.Println("---")
+
 
     anscombe_3 := []stats.Coordinate{
         {10, 7.46},
@@ -50,7 +61,9 @@ func main() {
         {7, 6.42},
         {5, 5.73},
     }
-    Printlinearregression(anscombe_3, "Anscombe 3 linear regression")
+    fmt.Println("Anscombe 3 linear regression")
+    Printlinearregression(anscombe_3)
+    fmt.Println("---")
 
     anscombe_4 := []stats.Coordinate{
         {8, 6.58},
@@ -65,16 +78,14 @@ func main() {
         {8, 7.91},
         {8, 6.89},
     }
-    Printlinearregression(anscombe_4, "Anscombe 4 linear regression")
+    fmt.Println("Anscombe 4 linear regression")
+    Printlinearregression(anscombe_4)
 }
 
-func Printlinearregression(data stats.Series, label string) {
-    fmt.Println(label)
+func Printlinearregression(data stats.Series) {
     r, _ := stats.LinearRegression(data)
 
     for i := 0; i < len(r); i++ {
-        fmt.Println(r[i])
+        fmt.Printf("{%d, %.15f},\n", int(r[i].X), r[i].Y)
     }
-
-    fmt.Println("---\n")
 }
